@@ -1,0 +1,49 @@
+
+
+.header{
+
+    &__searchbar{
+        padding: 10px;
+        background-color:$color-searchbar;
+        justify-content: end !important;
+
+        & input[type=text]{
+            width: clamp(90px, 246px, 325px);
+            padding: 9px;
+            border-radius: 6px;
+            outline: none;
+            border: none;
+        }
+    }
+
+    &__wrapper{
+        border-bottom: .1px solid $color-grey;
+        transition: unset;
+    }
+
+    &__item-wrapper{
+
+        margin:17px;
+        position: relative;
+        font-size: 21px;
+        font-weight: 500;
+
+        &:hover{
+
+            &:after{
+                width:100%;
+                border-bottom: 2px solid $color-dark-2;
+            }
+        }
+        &:after{
+            @include transition(.6s);
+            @include pseudo-element-position(unset, unset, -3px, 50%);
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            z-index: -1;
+            border-bottom: 2px solid transparent;
+
+        }
+    }
+}

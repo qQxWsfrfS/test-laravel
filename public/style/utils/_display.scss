@@ -1,0 +1,19 @@
+
+$default-gap:14px;
+
+
+@mixin flex-variable($direction, $justify-content: start, $align-items: start, $gap: $default-gap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    gap: $gap;
+}
+
+.flex-inline {
+    @include flex-variable(row);
+}
+
+.flex-block {
+    @include flex-variable(column);
+}
